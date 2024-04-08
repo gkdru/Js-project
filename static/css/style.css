@@ -1,0 +1,90 @@
+body {
+  background-color: #454545;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: gray;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header__icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__icon__img {
+  width: 50px;
+  height: 50px;
+  padding-right: 15px;
+}
+.header__login {
+  width: 130px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__login__btn {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+}
+.header__login:hover {
+  color: white;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
+.header__signUp:hover {
+  box-shadow: 0 0 20px RGB(146, 168, 209);
+  background-color: RGB(146, 168, 209);
+}
+
+/* MAIN */
+
+.shop_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item img {
+  object-fit: contain;
+  height: 300px;
+  width: 200px;
+}
