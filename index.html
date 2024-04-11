@@ -28,6 +28,16 @@
   </header>
   <main class="main">
     <div class="container">
+      <div class="filter">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" />
+        <label for="sortOrder">Sort by Price:</label>
+        <select id="sortOrder">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+        <button id="applyFilter">Apply</button>
+      </div>
       <div class="shop_list"></div>
     </div>
   </main>

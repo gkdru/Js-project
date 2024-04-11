@@ -2,7 +2,7 @@ const container = document.querySelector(".shop_list");
 const loginButton = document.getElementById("loginBtn");
 const signUpButton = document.getElementById("signUpBtn");
 const storedUsername = localStorage.getItem("username");
-
+let items;
 if (storedUsername) {
   loginButton.textContent = storedUsername;
 }
@@ -40,9 +40,30 @@ const renderElements = (items) => {
   });
 };
 
+document.getElementById("applyFilter").addEventListener("click", function () {
+  const itemName = document.getElementById("itemName").value.toLowerCase();
+  const sortOrder = document.getElementById("sortOrder").value;
+
+  let filteredItems = items;
+
+  if (itemName !== "") {
+    filteredItems = filteredItems.filter((item) => {
+      return item.title.toLowerCase().includes(itemName);
+    });
+  }
+
+  if (sortOrder === "asc") {
+    filteredItems.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "desc") {
+    filteredItems.sort((a, b) => b.price - a.price);
+  }
+
+  renderElements(filteredItems);
+});
+
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((answer) => {
-    const items = answer;
+    items = answer;
     renderElements(items);
   });
